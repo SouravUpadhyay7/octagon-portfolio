@@ -1,13 +1,41 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Navbar } from "@/components/Navbar";
+import { HeroSection } from "@/components/HeroSection";
+import { AboutSection } from "@/components/AboutSection";
+import { ExperienceSection } from "@/components/ExperienceSection";
+import { ResearchSection } from "@/components/ResearchSection";
+import { PublicationsSection } from "@/components/PublicationsSection";
+import { SupervisionSection } from "@/components/SupervisionSection";
+import { AchievementsSection } from "@/components/AchievementsSection";
+import { GallerySection } from "@/components/GallerySection";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease-out",
+    });
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen">
+      <Navbar />
+      <HeroSection />
+      <AboutSection />
+      <ExperienceSection />
+      <ResearchSection />
+      <PublicationsSection />
+      <SupervisionSection />
+      <AchievementsSection />
+      <GallerySection />
+      <ContactSection />
+      <Footer />
+    </main>
   );
 };
 
