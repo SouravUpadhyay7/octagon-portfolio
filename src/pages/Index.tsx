@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
@@ -15,15 +13,15 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: "ease-out",
-    });
+    // Smooth scroll behavior for anchor links
+    document.documentElement.style.scrollBehavior = "smooth";
+    return () => {
+      document.documentElement.style.scrollBehavior = "auto";
+    };
   }, []);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <AboutSection />
