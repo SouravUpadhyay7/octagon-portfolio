@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Linkedin, GraduationCap, MapPin, Send } from "lucide-react";
 import { getContent } from "@/data/content";
+import { titleVariants, staggerContainerVariants, staggerItemVariants } from "@/lib/animations";
 
 export const ContactSection = () => {
   const content = getContent();
@@ -27,15 +28,21 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 px-4 relative">
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+    <section id="contact" className="py-24 px-4 relative overflow-hidden">
+      <motion.div 
+        className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      />
       
       <div className="container max-w-4xl relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={titleVariants}
           className="text-center mb-12"
         >
           <h2 className="section-title">Get in Touch</h2>
@@ -45,10 +52,10 @@ export const ContactSection = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Links */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            variants={staggerContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
             className="space-y-4"
           >
             {contactLinks.map((link, index) => (
@@ -57,15 +64,19 @@ export const ContactSection = () => {
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                variants={staggerItemVariants}
+                whileHover={{ 
+                  x: 10, 
+                  boxShadow: "0 0 30px hsl(217 100% 65% / 0.2)",
+                }}
                 className="academic-card flex items-center gap-4 group cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                <motion.div 
+                  className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors"
+                  whileHover={{ rotate: 10 }}
+                >
                   <link.icon className="w-6 h-6 text-primary" />
-                </div>
+                </motion.div>
                 <div>
                   <p className="text-sm text-muted-foreground">{link.label}</p>
                   <p className="font-medium text-foreground group-hover:text-primary transition-colors">
@@ -77,16 +88,17 @@ export const ContactSection = () => {
 
             {/* Address */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              viewport={{ once: true }}
+              variants={staggerItemVariants}
+              whileHover={{ x: 10 }}
               className="academic-card"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
+                <motion.div 
+                  className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center shrink-0"
+                  whileHover={{ rotate: 10 }}
+                >
                   <MapPin className="w-6 h-6 text-primary" />
-                </div>
+                </motion.div>
                 <div>
                   <p className="text-sm text-muted-foreground">Office Address</p>
                   <p className="font-medium text-foreground text-sm leading-relaxed">
@@ -99,44 +111,67 @@ export const ContactSection = () => {
 
           {/* Quick Message */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+            whileHover={{ boxShadow: "0 0 40px hsl(217 100% 65% / 0.15)" }}
             className="academic-card"
           >
             <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-              <Send className="w-5 h-5 text-primary" />
+              <motion.div
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <Send className="w-5 h-5 text-primary" />
+              </motion.div>
               Send a Message
             </h3>
             <form className="space-y-4">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
                 <input
                   type="text"
                   placeholder="Your Name"
                   className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-muted-foreground"
                 />
-              </div>
-              <div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
                 <input
                   type="email"
                   placeholder="Your Email"
                   className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-muted-foreground"
                 />
-              </div>
-              <div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
                 <textarea
                   placeholder="Your Message"
                   rows={4}
                   className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none placeholder:text-muted-foreground"
                 />
-              </div>
-              <button
+              </motion.div>
+              <motion.button
                 type="submit"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
               >
                 Send Message
-              </button>
+              </motion.button>
             </form>
           </motion.div>
         </div>

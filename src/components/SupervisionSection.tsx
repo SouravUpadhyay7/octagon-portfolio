@@ -1,6 +1,30 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Users, BookOpen } from "lucide-react";
 import { getContent } from "@/data/content";
+import { titleVariants } from "@/lib/animations";
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, rotateX: -15 },
+  visible: (i: number) => ({ 
+    opacity: 1, 
+    y: 0, 
+    rotateX: 0,
+    transition: { 
+      duration: 0.6, 
+      delay: i * 0.15,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }),
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { 
+    opacity: 1, 
+    x: 0,
+    transition: { duration: 0.4 }
+  },
+};
 
 export const SupervisionSection = () => {
   const content = getContent();
@@ -12,13 +36,21 @@ export const SupervisionSection = () => {
   ];
 
   return (
-    <section id="supervision" className="py-24 px-4 relative">
-      <div className="container max-w-6xl">
+    <section id="supervision" className="py-24 px-4 relative overflow-hidden">
+      <motion.div 
+        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl"
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      />
+
+      <div className="container max-w-6xl relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={titleVariants}
           className="text-center mb-12"
         >
           <h2 className="section-title">Academic Supervision</h2>
@@ -34,25 +66,40 @@ export const SupervisionSection = () => {
             return (
               <motion.div
                 key={category.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-                viewport={{ once: true }}
+                custom={catIndex}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                whileHover={{ y: -10, boxShadow: "0 0 40px hsl(217 100% 65% / 0.2)" }}
                 className="academic-card"
+                style={{ perspective: "1000px" }}
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                  <motion.div 
+                    className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <category.icon className="w-5 h-5 text-primary" />
-                  </div>
+                  </motion.div>
                   <h3 className="text-lg font-semibold">{category.label}</h3>
                 </div>
 
-                <div className="space-y-4">
+                <motion.div 
+                  className="space-y-4"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ staggerChildren: 0.1, delayChildren: catIndex * 0.2 }}
+                >
                   {items.length > 0 ? (
                     items.map((item) => (
-                      <div
+                      <motion.div
                         key={item.id}
-                        className="p-3 rounded-lg bg-muted/50 border border-border/50"
+                        variants={itemVariants}
+                        whileHover={{ x: 5, backgroundColor: "hsl(var(--muted))" }}
+                        className="p-3 rounded-lg bg-muted/50 border border-border/50 transition-colors"
                       >
                         <p className="text-sm font-medium text-foreground mb-1">
                           {item.title}
@@ -63,14 +110,14 @@ export const SupervisionSection = () => {
                             {item.year}
                           </span>
                         </div>
-                      </div>
+                      </motion.div>
                     ))
                   ) : (
                     <p className="text-sm text-muted-foreground">
                       No entries yet
                     </p>
                   )}
-                </div>
+                </motion.div>
               </motion.div>
             );
           })}
