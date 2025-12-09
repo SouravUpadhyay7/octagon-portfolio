@@ -49,12 +49,6 @@ export const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="/admin"
-                className="px-4 py-2 text-sm bg-primary/10 text-primary border border-primary/30 rounded-lg hover:bg-primary/20 transition-all"
-              >
-                Admin
-              </a>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -89,12 +83,6 @@ export const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="/admin"
-                className="mt-4 px-4 py-3 text-center bg-primary/10 text-primary border border-primary/30 rounded-lg"
-              >
-                Admin Panel
-              </a>
             </nav>
           </motion.div>
         )}
