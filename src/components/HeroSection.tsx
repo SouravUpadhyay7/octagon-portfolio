@@ -13,12 +13,12 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } },
 };
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.8, rotate: -5 },
-  visible: { opacity: 1, scale: 1, rotate: 0, transition: { duration: 1, ease: "easeOut" } },
+  visible: { opacity: 1, scale: 1, rotate: 0, transition: { duration: 1, ease: "easeOut" as const } },
 };
 
 export const HeroSection = () => {
