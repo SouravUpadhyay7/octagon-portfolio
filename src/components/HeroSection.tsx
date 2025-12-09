@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, ArrowDown } from "lucide-react";
-import profileImage from "@/assets/profile-placeholder.jpg";
+import profileImage from "@/assets/hod-profile.jpeg";
 import { getContent } from "@/data/content";
 
 const containerVariants = {
