@@ -68,6 +68,14 @@ export const defaultContent: SiteContent = {
     "Cognitive Computing",
     "Brain Informatics",
     "Data Science",
+    "Quantum Computing",
+    "Generative AI",
+    "Cybersecurity",
+    "Software Engineering",
+    "Mathematics & Modeling",
+    "Embedded Systems",
+
+
   ],
   
   publications: [

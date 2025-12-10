@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { Brain, Cpu, Database, Network, Sparkles } from "lucide-react";
+import { Brain, Cpu, Database, Network, Sparkles, Orbit, WandSparkles, Atom, Bot, Code, Globe, Shapes, } from "lucide-react";
 import { getContent } from "@/data/content";
 import { titleVariants } from "@/lib/animations";
+
+
 
 const iconMap: Record<string, React.ElementType> = {
   "Artificial Intelligence": Brain,
@@ -9,6 +11,13 @@ const iconMap: Record<string, React.ElementType> = {
   "Cognitive Computing": Sparkles,
   "Brain Informatics": Network,
   "Data Science": Database,
+  "Quantum Computing": Atom,
+  "Generative AI": Bot,
+  "Cybersecurity": Globe,
+  "Software Engineering": Code,
+  "Mathematics & Modeling": Shapes,
+  "Embedded Systems": WandSparkles,
+
 };
 
 const containerVariants = {
