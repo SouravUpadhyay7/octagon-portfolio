@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    /* Elegant Light Academic Theme */
-    --background: 210 40% 98%;
+    /* Elegant Light Academic Theme - Slightly Darker */
+    --background: 220 20% 94%;
     --foreground: 222 47% 11%;
     
-    --card: 0 0% 100%;
+    --card: 220 20% 97%;
     --card-foreground: 222 47% 11%;
     
-    --popover: 0 0% 100%;
+    --popover: 220 20% 97%;
     --popover-foreground: 222 47% 11%;
     
     --primary: 217 91% 50%;
@@ -20,8 +20,8 @@
     --secondary: 165 84% 35%;
     --secondary-foreground: 0 0% 100%;
     
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 220 18% 90%;
+    --muted-foreground: 215 16% 42%;
     
     --accent: 165 84% 35%;
     --accent-foreground: 0 0% 100%;
@@ -29,30 +29,30 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
+    --border: 220 18% 85%;
+    --input: 220 18% 85%;
     --ring: 217 91% 50%;
     
     --radius: 0.75rem;
     
     /* Custom Academic Colors */
-    --bg-dark: 210 40% 98%;
-    --bg-light: 0 0% 100%;
+    --bg-dark: 220 20% 92%;
+    --bg-light: 220 20% 96%;
     --text-light: 222 47% 11%;
-    --text-muted: 215 16% 47%;
-    --card-dark: 210 40% 98%;
+    --text-muted: 215 16% 42%;
+    --card-dark: 220 18% 90%;
     --glow-primary: 217 91% 50%;
     --glow-accent: 165 84% 35%;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 50%) 0%, hsl(165 84% 35%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(210 40% 98%) 0%, hsl(0 0% 100%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(220 20% 92%) 0%, hsl(220 20% 96%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 20% 97%) 0%, hsl(220 18% 90%) 100%);
     
     /* Shadows */
-    --shadow-glow: 0 4px 30px hsl(217 91% 50% / 0.15);
-    --shadow-accent: 0 4px 25px hsl(165 84% 35% / 0.15);
-    --shadow-card: 0 4px 20px hsl(222 47% 11% / 0.08);
+    --shadow-glow: 0 4px 30px hsl(217 91% 50% / 0.18);
+    --shadow-accent: 0 4px 25px hsl(165 84% 35% / 0.18);
+    --shadow-card: 0 4px 20px hsl(222 47% 11% / 0.1);
     
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 222 47% 11%;
