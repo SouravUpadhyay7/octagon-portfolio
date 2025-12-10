@@ -32,8 +32,8 @@ export const Navbar = () => {
         transition={{ duration: 0.6 }}
         className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-full ${
           isScrolled
-            ? "bg-background/80 backdrop-blur-lg border border-border/50 py-3 shadow-lg shadow-background/20"
-            : "bg-background/40 backdrop-blur-sm border border-border/30 py-4"
+            ? "bg-stone-100/95 backdrop-blur-lg border border-stone-200 py-3 shadow-lg shadow-stone-300/30"
+            : "bg-stone-50/90 backdrop-blur-sm border border-stone-200/60 py-4 shadow-md shadow-stone-200/20"
         }`}
       >
         <div className="container max-w-6xl px-4">
