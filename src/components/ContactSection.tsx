@@ -43,10 +43,12 @@ export const ContactSection = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={titleVariants}
-          className="text-center mb-12"
+          className="text-center mb-12 flex justify-center"
         >
-          <h2 className="section-title">Get in Touch</h2>
-          <p className="section-subtitle mt-2">Let's Connect & Collaborate</p>
+          <div className="inline-block px-8 py-4 rounded-full border-2 border-primary/30 bg-transparent">
+            <h2 className="section-title">Get in Touch</h2>
+            <p className="section-subtitle mt-1">Let's Connect & Collaborate</p>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
