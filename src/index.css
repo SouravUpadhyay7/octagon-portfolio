@@ -4,54 +4,54 @@
 
 @layer base {
   :root {
-    /* Elegant Light Academic Theme - Slightly Darker */
-    --background: 220 20% 94%;
+    /* Elegant Light Academic Theme - Cyan Touch */
+    --background: 185 25% 93%;
     --foreground: 222 47% 11%;
     
-    --card: 220 20% 97%;
+    --card: 185 22% 96%;
     --card-foreground: 222 47% 11%;
     
-    --popover: 220 20% 97%;
+    --popover: 185 22% 96%;
     --popover-foreground: 222 47% 11%;
     
     --primary: 217 91% 50%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 165 84% 35%;
+    --secondary: 175 84% 32%;
     --secondary-foreground: 0 0% 100%;
     
-    --muted: 220 18% 90%;
-    --muted-foreground: 215 16% 42%;
+    --muted: 185 20% 89%;
+    --muted-foreground: 200 16% 40%;
     
-    --accent: 165 84% 35%;
+    --accent: 175 84% 32%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 220 18% 85%;
-    --input: 220 18% 85%;
+    --border: 185 18% 84%;
+    --input: 185 18% 84%;
     --ring: 217 91% 50%;
     
     --radius: 0.75rem;
     
     /* Custom Academic Colors */
-    --bg-dark: 220 20% 92%;
-    --bg-light: 220 20% 96%;
+    --bg-dark: 185 22% 91%;
+    --bg-light: 185 22% 95%;
     --text-light: 222 47% 11%;
-    --text-muted: 215 16% 42%;
-    --card-dark: 220 18% 90%;
+    --text-muted: 200 16% 40%;
+    --card-dark: 185 18% 88%;
     --glow-primary: 217 91% 50%;
-    --glow-accent: 165 84% 35%;
+    --glow-accent: 175 84% 32%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 50%) 0%, hsl(165 84% 35%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(220 20% 92%) 0%, hsl(220 20% 96%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(220 20% 97%) 0%, hsl(220 18% 90%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 50%) 0%, hsl(175 84% 32%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(185 22% 91%) 0%, hsl(185 22% 95%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(185 22% 96%) 0%, hsl(185 18% 88%) 100%);
     
     /* Shadows */
     --shadow-glow: 0 4px 30px hsl(217 91% 50% / 0.18);
-    --shadow-accent: 0 4px 25px hsl(165 84% 35% / 0.18);
+    --shadow-accent: 0 4px 25px hsl(175 84% 32% / 0.18);
     --shadow-card: 0 4px 20px hsl(222 47% 11% / 0.1);
     
     --sidebar-background: 0 0% 100%;
