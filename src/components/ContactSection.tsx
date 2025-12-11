@@ -28,7 +28,7 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 px-4 relative overflow-hidden">
+    <section id="contact" className="py-16 md:py-24 px-4 relative overflow-x-hidden pb-20">
       <motion.div 
         className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
         initial={{ opacity: 0, scale: 0 }}
