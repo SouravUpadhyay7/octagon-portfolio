@@ -28,16 +28,16 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-24 px-4 relative overflow-x-hidden pb-20">
+    <section id="contact" className="py-16 md:py-24 px-4 sm:px-6 relative pb-20">
       <motion.div 
-        className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+        className="absolute bottom-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-primary/10 rounded-full blur-3xl -z-10"
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       />
       
-      <div className="container max-w-4xl relative z-10">
+      <div className="container max-w-4xl relative z-10 mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -49,7 +49,7 @@ export const ContactSection = () => {
           <p className="section-subtitle mt-2">Let's Connect & Collaborate</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {/* Contact Links */}
           <motion.div
             variants={staggerContainerVariants}
@@ -67,19 +67,19 @@ export const ContactSection = () => {
                 variants={staggerItemVariants}
                 whileHover={{ 
                   x: 10, 
-                  boxShadow: "0 0 30px hsl(217 100% 65% / 0.2)",
+                  boxShadow: "0 0 30px hsl(185 80% 50% / 0.2)",
                 }}
-                className="academic-card flex items-center gap-4 group cursor-pointer"
+                className="academic-card flex items-center gap-4 group cursor-pointer overflow-hidden"
               >
                 <motion.div 
-                  className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors"
+                  className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors shrink-0"
                   whileHover={{ rotate: 10 }}
                 >
                   <link.icon className="w-6 h-6 text-primary" />
                 </motion.div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <p className="text-sm text-muted-foreground">{link.label}</p>
-                  <p className="font-medium text-foreground group-hover:text-primary transition-colors">
+                  <p className="font-medium text-foreground group-hover:text-primary transition-colors truncate">
                     {link.value}
                   </p>
                 </div>
@@ -90,7 +90,7 @@ export const ContactSection = () => {
             <motion.div
               variants={staggerItemVariants}
               whileHover={{ x: 10 }}
-              className="academic-card"
+              className="academic-card overflow-hidden"
             >
               <div className="flex items-start gap-4">
                 <motion.div 
@@ -99,9 +99,9 @@ export const ContactSection = () => {
                 >
                   <MapPin className="w-6 h-6 text-primary" />
                 </motion.div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <p className="text-sm text-muted-foreground">Office Address</p>
-                  <p className="font-medium text-foreground text-sm leading-relaxed">
+                  <p className="font-medium text-foreground text-sm leading-relaxed break-words">
                     {content.contact.address}
                   </p>
                 </div>
@@ -111,11 +111,11 @@ export const ContactSection = () => {
 
           {/* Quick Message */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-            whileHover={{ boxShadow: "0 0 40px hsl(217 100% 65% / 0.15)" }}
+            whileHover={{ boxShadow: "0 0 40px hsl(185 80% 50% / 0.15)" }}
             className="academic-card"
           >
             <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
