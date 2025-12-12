@@ -35,9 +35,6 @@ export const HeroSection = () => {
       <div className="container max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div variants={containerVariants} initial="hidden" animate="visible" className="text-center lg:text-left">
-            <motion.div variants={itemVariants} className="mb-4">
-              <span className="glow-pill inline-block mb-4">Academic Portfolio</span>
-            </motion.div>
             <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-poppins">
               Dr. Jyoti Sekhar <span className="gradient-text">Banerjee</span>
             </motion.h1>
