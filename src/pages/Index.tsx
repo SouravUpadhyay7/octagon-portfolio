@@ -11,6 +11,7 @@ import { AchievementsSection } from "@/components/AchievementsSection";
 import { GallerySection } from "@/components/GallerySection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 const Index = () => {
   useEffect(() => {
@@ -35,6 +36,7 @@ const Index = () => {
       <GallerySection />
       <ContactSection />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 };
