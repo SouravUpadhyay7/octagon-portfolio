@@ -38,7 +38,7 @@ export const Navbar = () => {
       >
         <div className="container max-w-6xl px-4">
           <div className="flex items-center justify-between">
-            <a href="#" className="text-xl font-bold font-poppins gradient-text">
+            <a href="#" className="text-lg font-bold font-poppins gradient-text px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300">
               Dr. JSB
             </a>
 
