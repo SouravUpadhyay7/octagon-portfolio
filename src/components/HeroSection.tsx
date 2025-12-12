@@ -60,7 +60,7 @@ export const HeroSection = () => {
           <motion.div variants={imageVariants} initial="hidden" animate="visible" className="flex justify-center lg:justify-end">
             <div className="relative">
               <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 blur-2xl rounded-full transform scale-110" animate={{ rotate: [0, 360] }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} />
-              <motion.img src={image} alt="Dr. Jyoti Sekhar Banerjee" className="w-72 h-72 md:w-80 md:h-80 rounded-full object-cover border-4 border-primary shadow-lg shadow-primary/30 relative z-10" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} />
+              <motion.img src={image} alt="Dr. Jyoti Sekhar Banerjee" loading="eager" decoding="async" fetchPriority="high" className="w-72 h-72 md:w-80 md:h-80 rounded-full object-cover border-4 border-primary shadow-lg shadow-primary/30 relative z-10" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} />
               <motion.div className="absolute -top-4 -right-4 w-8 h-8 border-2 border-primary/50 rounded-full" animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity }} />
               <motion.div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent/30 rounded-full" animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} />
             </div>
