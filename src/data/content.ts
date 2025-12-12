@@ -262,6 +262,27 @@ export const defaultContent: SiteContent = {
       image: "",
       date: "2023",
     },
+    {
+      id: "gal-4",
+      title: "Keynote Speech",
+      description: "Delivering keynote address at International AI Summit",
+      image: "",
+      date: "2024",
+    },
+    {
+      id: "gal-5",
+      title: "Graduation Ceremony",
+      description: "Celebrating academic achievements with graduating students",
+      image: "",
+      date: "2024",
+    },
+    {
+      id: "gal-6",
+      title: "Research Lab Collaboration",
+      description: "Working with research team on AI and cognitive computing projects",
+      image: "",
+      date: "2023",
+    },
   ],
   
   contact: {
