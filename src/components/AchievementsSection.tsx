@@ -14,9 +14,11 @@ export const AchievementsSection = () => {
       <motion.div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} />
       
       <div className="container max-w-6xl relative z-10">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={titleVariants} className="text-center mb-12">
-          <h2 className="section-title">Awards & Achievements</h2>
-          <p className="section-subtitle mt-2">Recognition & Accomplishments</p>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={titleVariants} className="text-center mb-12 flex justify-center">
+          <div className="inline-block px-8 py-4 rounded-full border-2 border-primary/30 bg-transparent">
+            <h2 className="section-title">Awards & Achievements</h2>
+            <p className="section-subtitle mt-1">Recognition & Accomplishments</p>
+          </div>
         </motion.div>
 
         <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" variants={staggerContainerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>

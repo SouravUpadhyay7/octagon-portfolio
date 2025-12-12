@@ -11,9 +11,11 @@ export const ExperienceSection = () => {
       <motion.div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} />
       
       <div className="container max-w-4xl relative z-10">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={titleVariants} className="text-center mb-16">
-          <h2 className="section-title">Experience & Appointments</h2>
-          <p className="section-subtitle mt-2">Academic and Research Positions</p>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={titleVariants} className="text-center mb-16 flex justify-center">
+          <div className="inline-block px-8 py-4 rounded-full border-2 border-primary/30 bg-transparent">
+            <h2 className="section-title">Experience & Appointments</h2>
+            <p className="section-subtitle mt-1">Academic and Research Positions</p>
+          </div>
         </motion.div>
 
         <div className="relative">
