@@ -16,9 +16,11 @@ export const GallerySection = () => {
       <motion.div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} />
       
       <div className="container max-w-6xl relative z-10">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={titleVariants} className="text-center mb-12">
-          <h2 className="section-title">Gallery & Events</h2>
-          <p className="section-subtitle mt-2">Moments from Academic Journey</p>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={titleVariants} className="text-center mb-12 flex justify-center">
+          <div className="inline-block px-8 py-4 rounded-full border-2 border-primary/30 bg-transparent">
+            <h2 className="section-title">Gallery & Events</h2>
+            <p className="section-subtitle mt-1">Moments from Academic Journey</p>
+          </div>
         </motion.div>
 
         <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" variants={staggerContainerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>

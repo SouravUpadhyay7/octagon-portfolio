@@ -22,10 +22,12 @@ export const PublicationsSection = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={titleVariants}
-          className="text-center mb-12"
+          className="text-center mb-12 flex justify-center"
         >
-          <h2 className="section-title">Publications</h2>
-          <p className="section-subtitle mt-2">Selected Research Publications</p>
+          <div className="inline-block px-8 py-4 rounded-full border-2 border-primary/30 bg-transparent">
+            <h2 className="section-title">Publications</h2>
+            <p className="section-subtitle mt-1">Selected Research Publications</p>
+          </div>
         </motion.div>
 
         <motion.div 
