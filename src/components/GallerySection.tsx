@@ -4,8 +4,11 @@ import { titleVariants, staggerContainerVariants, staggerItemVariants } from "@/
 import galleryConference from "@/assets/gallery-conference.jpg";
 import galleryWorkshop from "@/assets/gallery-workshop.jpg";
 import gallerySeminar from "@/assets/gallery-seminar.jpg";
+import galleryKeynote from "@/assets/gallery-keynote.jpg";
+import galleryGraduation from "@/assets/gallery-graduation.jpg";
+import galleryResearchLab from "@/assets/gallery-research-lab.jpg";
 
-const defaultImages = [galleryConference, galleryWorkshop, gallerySeminar];
+const defaultImages = [galleryConference, galleryWorkshop, gallerySeminar, galleryKeynote, galleryGraduation, galleryResearchLab];
 
 export const GallerySection = () => {
   const content = getContent();
