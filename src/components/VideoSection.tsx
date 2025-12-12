@@ -4,7 +4,7 @@ import { useState } from "react";
 import { titleVariants } from "@/lib/animations";
 
 // Placeholder video URL - replace with Cloudinary video URL
-const VIDEO_URL = "https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4";
+const VIDEO_URL = "https://res.cloudinary.com/dyqfbq6kf/video/upload/v1755247875/11548675-uhd_3840_2160_1_b7lwvn.mp4";
 
 export const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
