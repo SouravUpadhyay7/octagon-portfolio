@@ -6,6 +6,15 @@ export interface Publication {
   doi: string;
 }
 
+export interface Book {
+  id: string;
+  title: string;
+  publisher: string;
+  year: number;
+  coverImage: string;
+  purchaseLink: string;
+}
+
 export interface Experience {
   id: string;
   title: string;
@@ -45,6 +54,7 @@ export interface SiteContent {
   profileImage: string;
   researchInterests: string[];
   publications: Publication[];
+  books: Book[];
   experiences: Experience[];
   supervisions: Supervision[];
   achievements: Achievement[];
@@ -54,6 +64,10 @@ export interface SiteContent {
     linkedin: string;
     googleScholar: string;
     address: string;
+    twitter?: string;
+    github?: string;
+    youtube?: string;
+    researchGate?: string;
   };
 }
 
@@ -113,6 +127,33 @@ export const defaultContent: SiteContent = {
       journal: "Neurocomputing",
       year: 2022,
       doi: "10.1016/j.neucom.2022.XXXXX",
+    },
+  ],
+
+  books: [
+    {
+      id: "book-1",
+      title: "Artificial Intelligence: A Modern Approach to Cognitive Computing",
+      publisher: "Springer Nature",
+      year: 2024,
+      coverImage: "/placeholder.svg",
+      purchaseLink: "https://amazon.com",
+    },
+    {
+      id: "book-2",
+      title: "Machine Learning for Brain Informatics",
+      publisher: "CRC Press",
+      year: 2023,
+      coverImage: "/placeholder.svg",
+      purchaseLink: "https://amazon.com",
+    },
+    {
+      id: "book-3",
+      title: "Deep Learning in Healthcare: Principles and Applications",
+      publisher: "Academic Press",
+      year: 2022,
+      coverImage: "/placeholder.svg",
+      purchaseLink: "https://amazon.com",
     },
   ],
   
@@ -290,6 +331,10 @@ export const defaultContent: SiteContent = {
     linkedin: "https://linkedin.com/in/drjsbanerjee",
     googleScholar: "https://scholar.google.com/citations?user=XXXXX",
     address: "Department of CSE (AI & ML), Techno Bengal Institute of Technology, Kolkata, West Bengal, India",
+    twitter: "https://twitter.com/drjsbanerjee",
+    github: "https://github.com/drjsbanerjee",
+    youtube: "https://youtube.com/@drjsbanerjee",
+    researchGate: "https://researchgate.net/profile/drjsbanerjee",
   },
 };
 

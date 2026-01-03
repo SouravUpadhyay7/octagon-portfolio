@@ -1,30 +1,52 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, GraduationCap, MapPin, Send } from "lucide-react";
+import { Mail, Linkedin, GraduationCap, MapPin, Send, Twitter, Github, Youtube, Globe, FileText, BookOpen } from "lucide-react";
 import { getContent } from "@/data/content";
 import { titleVariants, staggerContainerVariants, staggerItemVariants } from "@/lib/animations";
 
 export const ContactSection = () => {
   const content = getContent();
 
-  const contactLinks = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: content.contact.email,
-      href: `mailto:${content.contact.email}`,
-    },
+  const socialLinks = [
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "Connect on LinkedIn",
       href: content.contact.linkedin,
     },
     {
       icon: GraduationCap,
       label: "Google Scholar",
-      value: "View Publications",
       href: content.contact.googleScholar,
     },
+    {
+      icon: Twitter,
+      label: "Twitter/X",
+      href: content.contact.twitter || "#",
+    },
+    {
+      icon: Github,
+      label: "GitHub",
+      href: content.contact.github || "#",
+    },
+    {
+      icon: Youtube,
+      label: "YouTube",
+      href: content.contact.youtube || "#",
+    },
+    {
+      icon: FileText,
+      label: "ResearchGate",
+      href: content.contact.researchGate || "#",
+    },
+  ];
+
+  // Fake logos for placeholder
+  const partnerLogos = [
+    { name: "University 1", placeholder: true },
+    { name: "Research Lab", placeholder: true },
+    { name: "Tech Partner", placeholder: true },
+    { name: "Institute", placeholder: true },
+    { name: "Collaboration", placeholder: true },
+    { name: "Foundation", placeholder: true },
   ];
 
   return (
@@ -37,7 +59,7 @@ export const ContactSection = () => {
         transition={{ duration: 1 }}
       />
       
-      <div className="container max-w-4xl relative z-10 mx-auto">
+      <div className="container max-w-5xl relative z-10 mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -51,8 +73,39 @@ export const ContactSection = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {/* Contact Links */}
+        {/* Social Links Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-4 mb-12"
+        >
+          {socialLinks.map((link, index) => (
+            <motion.a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ 
+                scale: 1.1, 
+                y: -5,
+                boxShadow: "0 10px 30px hsl(185 80% 50% / 0.3)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="w-14 h-14 rounded-xl bg-card border border-border flex items-center justify-center group hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
+              title={link.label}
+            >
+              <link.icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
+            </motion.a>
+          ))}
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
+          {/* Contact Details */}
           <motion.div
             variants={staggerContainerVariants}
             initial="hidden"
@@ -60,33 +113,29 @@ export const ContactSection = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="space-y-4"
           >
-            {contactLinks.map((link, index) => (
-              <motion.a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                variants={staggerItemVariants}
-                whileHover={{ 
-                  x: 10, 
-                  boxShadow: "0 0 30px hsl(185 80% 50% / 0.2)",
-                }}
-                className="academic-card flex items-center gap-4 group cursor-pointer overflow-hidden"
+            {/* Email */}
+            <motion.a
+              href={`mailto:${content.contact.email}`}
+              variants={staggerItemVariants}
+              whileHover={{ 
+                x: 10, 
+                boxShadow: "0 0 30px hsl(185 80% 50% / 0.2)",
+              }}
+              className="academic-card flex items-center gap-4 group cursor-pointer overflow-hidden"
+            >
+              <motion.div 
+                className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors shrink-0"
+                whileHover={{ rotate: 10 }}
               >
-                <motion.div 
-                  className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors shrink-0"
-                  whileHover={{ rotate: 10 }}
-                >
-                  <link.icon className="w-6 h-6 text-primary" />
-                </motion.div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm text-muted-foreground">{link.label}</p>
-                  <p className="font-medium text-foreground group-hover:text-primary transition-colors truncate">
-                    {link.value}
-                  </p>
-                </div>
-              </motion.a>
-            ))}
+                <Mail className="w-6 h-6 text-primary" />
+              </motion.div>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm text-muted-foreground">Email</p>
+                <p className="font-medium text-foreground group-hover:text-primary transition-colors truncate">
+                  {content.contact.email}
+                </p>
+              </div>
+            </motion.a>
 
             {/* Address */}
             <motion.div
@@ -177,6 +226,47 @@ export const ContactSection = () => {
             </form>
           </motion.div>
         </div>
+
+        {/* Partner/Affiliation Logos Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <motion.h3
+            className="text-xl font-semibold text-center mb-8 text-muted-foreground"
+          >
+            Affiliations & Collaborations
+          </motion.h3>
+          
+          <motion.div 
+            className="flex flex-wrap justify-center items-center gap-8"
+            variants={staggerContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {partnerLogos.map((logo, index) => (
+              <motion.div
+                key={logo.name}
+                variants={staggerItemVariants}
+                whileHover={{ scale: 1.1, y: -5 }}
+                className="w-28 h-16 rounded-lg bg-muted/30 border border-border/50 flex items-center justify-center group hover:border-primary/30 hover:bg-muted/50 transition-all duration-300"
+              >
+                <div className="text-center">
+                  <Globe className="w-6 h-6 text-muted-foreground/50 mx-auto mb-1" />
+                  <span className="text-[10px] text-muted-foreground/50 font-medium">
+                    {logo.name}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+          <p className="text-center text-sm text-muted-foreground/60 mt-4">
+            Replace these placeholders with your actual partner logos
+          </p>
+        </motion.div>
       </div>
     </section>
   );
