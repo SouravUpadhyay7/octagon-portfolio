@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, ArrowDown } from "lucide-react";
+import { MapPin, ArrowDown, Globe } from "lucide-react";
 import profileImage from "@/assets/hod-profile.jpeg";
 import { getContent } from "@/data/content";
 
@@ -54,6 +54,28 @@ export const HeroSection = () => {
               <motion.a href="#contact" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} className="inline-flex items-center gap-2 px-6 py-3 border border-primary/30 text-foreground rounded-lg font-medium hover:bg-primary/10 hover:border-primary transition-all duration-300">
                 Get in Touch
               </motion.a>
+            </motion.div>
+            
+            {/* Affiliation Logo Boxes */}
+            <motion.div variants={itemVariants} className="mt-6 flex gap-3 justify-center lg:justify-start">
+              {[
+                { name: "Affiliation 1", href: "#" },
+                { name: "Affiliation 2", href: "#" },
+                { name: "Affiliation 3", href: "#" },
+              ].map((item, index) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-12 h-12 rounded-lg bg-muted/30 border border-border/50 flex items-center justify-center group hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
+                  title={item.name}
+                >
+                  <Globe className="w-5 h-5 text-muted-foreground/60 group-hover:text-primary transition-colors" />
+                </motion.a>
+              ))}
             </motion.div>
           </motion.div>
 
