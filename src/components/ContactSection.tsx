@@ -39,14 +39,14 @@ export const ContactSection = () => {
     },
   ];
 
-  // Fake logos for placeholder
+  // Fake logos for placeholder - add your actual links here
   const partnerLogos = [
-    { name: "University 1", placeholder: true },
-    { name: "Research Lab", placeholder: true },
-    { name: "Tech Partner", placeholder: true },
-    { name: "Institute", placeholder: true },
-    { name: "Collaboration", placeholder: true },
-    { name: "Foundation", placeholder: true },
+    { name: "University 1", href: "#", placeholder: true },
+    { name: "Research Lab", href: "#", placeholder: true },
+    { name: "Tech Partner", href: "#", placeholder: true },
+    { name: "Institute", href: "#", placeholder: true },
+    { name: "Collaboration", href: "#", placeholder: true },
+    { name: "Foundation", href: "#", placeholder: true },
   ];
 
   return (
@@ -248,19 +248,22 @@ export const ContactSection = () => {
             viewport={{ once: true }}
           >
             {partnerLogos.map((logo, index) => (
-              <motion.div
+              <motion.a
                 key={logo.name}
+                href={logo.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 variants={staggerItemVariants}
                 whileHover={{ scale: 1.1, y: -5 }}
-                className="w-28 h-16 rounded-lg bg-muted/30 border border-border/50 flex items-center justify-center group hover:border-primary/30 hover:bg-muted/50 transition-all duration-300"
+                className="w-28 h-16 rounded-lg bg-muted/30 border border-border/50 flex items-center justify-center group hover:border-primary/30 hover:bg-muted/50 transition-all duration-300 cursor-pointer"
               >
                 <div className="text-center">
-                  <Globe className="w-6 h-6 text-muted-foreground/50 mx-auto mb-1" />
-                  <span className="text-[10px] text-muted-foreground/50 font-medium">
+                  <Globe className="w-6 h-6 text-muted-foreground/50 mx-auto mb-1 group-hover:text-primary/70 transition-colors" />
+                  <span className="text-[10px] text-muted-foreground/50 font-medium group-hover:text-muted-foreground transition-colors">
                     {logo.name}
                   </span>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </motion.div>
           <p className="text-center text-sm text-muted-foreground/60 mt-4">
