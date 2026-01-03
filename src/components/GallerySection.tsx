@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { getContent } from "@/data/content";
 import { titleVariants, staggerContainerVariants, staggerItemVariants } from "@/lib/animations";
-import galleryConference from "@/assets/gallery-conference.jpg";
-import galleryWorkshop from "@/assets/gallery-workshop.jpg";
-import gallerySeminar from "@/assets/gallery-seminar.jpg";
-import galleryKeynote from "@/assets/gallery-keynote.jpg";
-import galleryGraduation from "@/assets/gallery-graduation.jpg";
-import galleryResearchLab from "@/assets/gallery-research-lab.jpg";
+import all from "@/assets/Gallery/all.jpeg";
+import forum from "@/assets/Gallery/forum.jpeg";
+import guest from "@/assets/Gallery/guest.jpeg";
+import nit from "@/assets/Gallery/nit.jpeg";
+import sabbit from "@/assets/Gallery/sabbit.jpeg";
 
-const defaultImages = [galleryConference, galleryWorkshop, gallerySeminar, galleryKeynote, galleryGraduation, galleryResearchLab];
+
+const defaultImages = [all, forum, guest,nit,sabbit];
 
 export const GallerySection = () => {
   const content = getContent();

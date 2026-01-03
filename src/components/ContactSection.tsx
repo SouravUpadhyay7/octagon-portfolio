@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, GraduationCap, MapPin, Send, Twitter, Github, Youtube, Globe, FileText, BookOpen } from "lucide-react";
+import { Mail, Linkedin, MapPin, Send, Twitter, Github,Globe} from "lucide-react";
 import { getContent } from "@/data/content";
 import { titleVariants, staggerContainerVariants, staggerItemVariants } from "@/lib/animations";
 
@@ -13,11 +13,6 @@ export const ContactSection = () => {
       href: content.contact.linkedin,
     },
     {
-      icon: GraduationCap,
-      label: "Google Scholar",
-      href: content.contact.googleScholar,
-    },
-    {
       icon: Twitter,
       label: "Twitter/X",
       href: content.contact.twitter || "#",
@@ -26,16 +21,6 @@ export const ContactSection = () => {
       icon: Github,
       label: "GitHub",
       href: content.contact.github || "#",
-    },
-    {
-      icon: Youtube,
-      label: "YouTube",
-      href: content.contact.youtube || "#",
-    },
-    {
-      icon: FileText,
-      label: "ResearchGate",
-      href: content.contact.researchGate || "#",
     },
   ];
 

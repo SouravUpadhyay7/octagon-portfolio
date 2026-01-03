@@ -72,7 +72,9 @@ export interface SiteContent {
 }
 
 export const defaultContent: SiteContent = {
-  about: `Dr. Jyoti Sekhar Banerjee is an accomplished academician and researcher with 20+ years of experience in Computer Science and Engineering, specializing in Artificial Intelligence, Machine Learning, Cognitive Computing, and Brain Informatics. He has collaborated with institutions across India, UK, Malaysia, and Greece, contributing to interdisciplinary research and academic leadership. As HoD of CSE (AI & ML), he actively guides students, leads research initiatives, and participates in global research activities.`,
+  about: `I am Prof. (Dr.) Jyoti Sekhar Banerjee (He/Him). I hold a B.Tech, M.E., Ph.D. (Engg.), Post-Doctorate (UK), and a PG Diploma in IPR & TBM. I am a Chartered Engineer (India) and a Fellow of IETE.
+
+Currently, I am working as Associate Professor and Head of the Department, Department of CSE (AI & ML), and Professor-in-Charge, R & D and Consultancy Cell. I also serve as the Nodal Officer, IPR Cell at Techno Bengal Institute of Technology (formerly known as Bengal Institute of Technology), a unit of the Techno India Group, Kolkata, India. The institute is NAAC accredited.`,
   
   profileImage: "",
   
@@ -327,14 +329,12 @@ export const defaultContent: SiteContent = {
   ],
   
   contact: {
-    email: "jyotisekhar.banerjee@example.edu",
-    linkedin: "https://linkedin.com/in/drjsbanerjee",
+    email: "jyotisekhar.banerjee@bitcollege.in",
+    linkedin: "https://www.linkedin.com/in/dr-jyoti-sekhar-banerjee-6b052718b?originalSubdomain=in",
     googleScholar: "https://scholar.google.com/citations?user=XXXXX",
     address: "Department of CSE (AI & ML), Techno Bengal Institute of Technology, Kolkata, West Bengal, India",
     twitter: "https://twitter.com/drjsbanerjee",
     github: "https://github.com/drjsbanerjee",
-    youtube: "https://youtube.com/@drjsbanerjee",
-    researchGate: "https://researchgate.net/profile/drjsbanerjee",
   },
 };
 
